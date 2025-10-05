@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @ToString
-public class articleDTO {
+public class ArticleDTO {
     private Long id;
     private Long source;
     private String category;

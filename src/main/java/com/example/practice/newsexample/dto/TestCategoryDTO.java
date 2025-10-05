@@ -1,4 +1,4 @@
-package com.example.practice.news.dto;
+package com.example.practice.newsexample.dto;
 
 import lombok.*;
 
@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @ToString
-public class categoryDTO {
+public class TestCategoryDTO {
     private Long id;
     private String name;
     private String memo;

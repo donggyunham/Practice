@@ -1,6 +1,6 @@
 package com.example.practice.news.entity;
 
-import com.example.practice.news.dto.articleDTO;
+import com.example.practice.news.dto.ArticleDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,18 +15,18 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class articleEntity {
+public class ArticleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "source", foreignKey = @ForeignKey(name = "article_ibfk_1"))
-    private Long source;
+    private SourceEntity source;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category", foreignKey = @ForeignKey(name = "article_ibfk_2"))
-    private String category;
+    private CategoryEntity category;
 
     @Column(length = 150)
     private String author;
@@ -58,17 +58,17 @@ public class articleEntity {
     private LocalDateTime updatedAt;
 
 
-    public static articleDTO toArticleEntity(articleDTO articleDTO){
-        return articleDTO.builder()
-                .source()
-                .category()
-                .author()
-                .title()
-                .description()
-                .url()
-                .urlToImage()
-                .publishedAt()
-                .content()
+    public static ArticleDTO toArticleEntity(ArticleDTO articleDTO){
+        return ArticleDTO.builder()
+                .source(articleDTO.getSource())
+                .category(articleDTO.getCategory())
+                .author(articleDTO.getAuthor())
+                .title(articleDTO.getTitle())
+                .description(articleDTO.getDescription())
+                .url(articleDTO.getUrl())
+                .urlToImage(articleDTO.getUrlToImage())
+                .publishedAt(articleDTO.getPublishedAt())
+                .content(articleDTO.getContent())
                 .build();
     }
 }

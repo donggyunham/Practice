@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @ToString
-public class sourceDTO {
+public class SourceDTO {
     private Long id;
     private Long sid;
     private String name;

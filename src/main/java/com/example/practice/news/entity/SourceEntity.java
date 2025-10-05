@@ -1,6 +1,6 @@
 package com.example.practice.news.entity;
 
-import com.example.practice.news.dto.sourceDTO;
+import com.example.practice.news.dto.SourceDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class sourceEntity {
+public class SourceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -47,8 +47,8 @@ public class sourceEntity {
     @Column(name = "updated_at", insertable = false)
     private LocalDateTime updatedAt;
 
-    public static sourceDTO tosourceEntity(sourceDTO sourceDTO){
-        return sourceDTO.builder()
+    public static SourceDTO tosourceEntity(SourceDTO sourceDTO){
+        return SourceDTO.builder()
                 .sid(sourceDTO.getSid())
                 .name(sourceDTO.getName())
                 .description(sourceDTO.getDescription())

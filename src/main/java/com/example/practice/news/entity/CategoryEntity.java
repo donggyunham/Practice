@@ -1,6 +1,6 @@
 package com.example.practice.news.entity;
 
-import com.example.practice.news.dto.categoryDTO;
+import com.example.practice.news.dto.CategoryDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class categoryEntity {
+public class CategoryEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,10 +33,17 @@ public class categoryEntity {
     @Column(name = "updated_at", insertable = false)
     private LocalDateTime updatedAt;
 
-    public static categoryDTO toCategoryEntity(categoryDTO categoryDTO){
-        return categoryDTO.builder()
-                .name(categoryDTO.getName())
-                .memo(categoryDTO.getMemo())
+    public static CategoryDTO toCategoryDTO(CategoryEntity categoryEntity){
+        return CategoryDTO.builder()
+                .name(categoryEntity.getName())
+                .memo(categoryEntity.getMemo())
                 .build();
+    }
+
+    public static CategoryEntity toCategoryEntity(CategoryDTO categoryDTO){
+        CategoryEntity categoryEntity = new CategoryEntity();
+        categoryEntity.name = categoryDTO.getName();
+        categoryEntity.memo = categoryDTO.getMemo();
+        return categoryEntity;
     }
 }
