@@ -2,9 +2,49 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <!-- css사용시 필요 링크 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- 아이콘 사용 시 필요 링크 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>Title</title>
 </head>
 <body>
+    <div class="flex-grow-1 p-4 bg-light-subtle">
+        <h2>Articles</h2>
 
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Published At</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Spring Boot Guide</td>
+                    <td>John Doe</td>
+                    <td>Programming</td>
+                    <td>2025-10-05</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>JPA Tutorial</td>
+                    <td>Jane Smith</td>
+                    <td>Database</td>
+                    <td>2025-10-04</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div th:fragment="bootstrap_script">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </div>
 </body>
 </html>

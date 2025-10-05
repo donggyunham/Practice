@@ -2,9 +2,26 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
 </head>
 <body>
+    <!-- Navbar -->
+    <header class="navbar sticky-top shadow-sm px-4 py-2 navbar-dark" style="background-color:#2c3e50;">
+        <!-- Brand -->
+        <a class="navbar-brand fs-2 fw-bold me-4" href="#">Practice</a>
 
+        <!-- Search 좌측 -->
+        <form class="d-flex align-items-center me-auto" role="search">
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control bg-dark text-light border border-dark" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light border border-dark" type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </form>
+
+        <!-- Login 버튼 우측 유지 -->
+        <button class="btn btn-sm text-light" style="background-color:#2e4a6d; border:none; transition: background-color 0.2s;"
+                onmouseover="this.style.backgroundColor='#3a5a7d'" onmouseout="this.style.backgroundColor='#2e4a6d'">Login</button>
+    </header>
 </body>
 </html>
