@@ -7,7 +7,7 @@
     <!-- Navbar -->
     <header th:fragment="navbar" class="navbar sticky-top shadow-sm px-4 py-2 navbar-dark" style="background-color:#2c3e50;">
         <!-- Brand -->
-        <a class="navbar-brand fs-2 fw-bold me-4" href="#">Practice</a>
+        <a class="navbar-brand fs-2 fw-bold me-4" th:href="@{/dashboard}">Practice</a>
 
         <!-- Search 좌측 -->
         <form class="d-flex align-items-center me-auto" role="search">
@@ -20,7 +20,7 @@
         </form>
 
         <!-- Login 버튼 우측 유지 -->
-        <button class="btn btn-sm text-light" style="background-color:#2e4a6d; border:none; transition: background-color 0.2s;"
+        <button class="btn btn-lg text-light" style="background-color:#2e4a6d; border:none; transition: background-color 0.2s;"
                 onmouseover="this.style.backgroundColor='#3a5a7d'" onmouseout="this.style.backgroundColor='#2e4a6d'">Login</button>
     </header>
 </body>

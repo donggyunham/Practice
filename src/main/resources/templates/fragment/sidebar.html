@@ -9,25 +9,25 @@
     <nav th:fragment="sidebar" class="d-flex flex-column flex-shrink-0 p-2" style="width: 160px; background-color:#2c3e50;">
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item mb-2">
-                <a href="#" class="nav-link text-light d-flex align-items-center" style="transition: color 0.2s;"
+                <a th:href="@{/dashboard}" class="nav-link text-light d-flex align-items-center" style="transition: color 0.2s;"
                    onmouseover="this.style.color='#4a90e2'" onmouseout="this.style.color='white'">
                     <i class="bi bi-speedometer2 me-2"></i> Dashboard
                 </a>
             </li>
             <li class="nav-item mb-2">
-                <a href="#" class="nav-link text-light d-flex align-items-center" style="transition: color 0.2s;"
+                <a th:href="@{/article}" class="nav-link text-light d-flex align-items-center" style="transition: color 0.2s;"
                    onmouseover="this.style.color='#4a90e2'" onmouseout="this.style.color='white'">
                     <i class="bi bi-file-text me-2"></i> Article
                 </a>
             </li>
             <li class="nav-item mb-2">
-                <a href="#" class="nav-link text-light d-flex align-items-center" style="transition: color 0.2s;"
+                <a th:href="@{/source}" class="nav-link text-light d-flex align-items-center" style="transition: color 0.2s;"
                    onmouseover="this.style.color='#4a90e2'" onmouseout="this.style.color='white'">
                     <i class="bi bi-box-seam me-2"></i> Source
                 </a>
             </li>
             <li class="nav-item mb-2">
-                <a href="#" class="nav-link text-light d-flex align-items-center" style="transition: color 0.2s;"
+                <a th:href="@{/category}" class="nav-link text-light d-flex align-items-center" style="transition: color 0.2s;"
                    onmouseover="this.style.color='#4a90e2'" onmouseout="this.style.color='white'">
                     <i class="bi bi-tags me-2"></i> Category
                 </a>

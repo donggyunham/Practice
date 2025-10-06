@@ -19,7 +19,7 @@ public class TestCategoryService {
         List<TestCategoryDTO> testDtoList = new ArrayList<>();
 
         for (TestCategoryEntity testCategoryEntity : testEntityList) {
-            TestCategoryDTO dto = TestCategoryEntity.toTestCategoryDTO(testCategoryEntity);
+            TestCategoryDTO dto = testCategoryEntity.toTestCategoryDTO(testCategoryEntity);
             testDtoList.add(dto);
         }
         return testDtoList;
