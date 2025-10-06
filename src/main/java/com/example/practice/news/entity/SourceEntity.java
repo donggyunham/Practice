@@ -21,7 +21,7 @@ public class SourceEntity {
     private Long id;
 
     @Column(length = 100)
-    private Long sid;
+    private String sid;
 
     @Column(length = 100)
     private String name;
@@ -47,15 +47,27 @@ public class SourceEntity {
     @Column(name = "updated_at", insertable = false)
     private LocalDateTime updatedAt;
 
-    public static SourceDTO tosourceEntity(SourceDTO sourceDTO){
+    public static SourceEntity toSourceEntity(SourceDTO sourceDTO){
+        SourceEntity sourceEntity = new SourceEntity();
+        sourceEntity.sid = sourceDTO.getId();
+        sourceEntity.name = sourceDTO.getName();
+        sourceEntity.description = sourceDTO.getDescription();
+        sourceEntity.url = sourceDTO.getUrl();
+        sourceEntity.category = sourceDTO.getCategory();
+        sourceEntity.language = sourceDTO.getLanguage();
+        sourceEntity.country = sourceDTO.getCountry();
+        return sourceEntity;
+    }
+
+    public static SourceDTO toSourceDTO(SourceEntity sourceEntity){
         return SourceDTO.builder()
-                .sid(sourceDTO.getSid())
-                .name(sourceDTO.getName())
-                .description(sourceDTO.getDescription())
-                .url(sourceDTO.getUrl())
-                .category(sourceDTO.getCategory())
-                .language(sourceDTO.getLanguage())
-                .country(sourceDTO.getCountry())
+                .id(sourceEntity.getSid())
+                .name(sourceEntity.getName())
+                .description(sourceEntity.getDescription())
+                .category(sourceEntity.getCategory())
+                .url(sourceEntity.getUrl())
+                .language(sourceEntity.getLanguage())
+                .country(sourceEntity.getCountry())
                 .build();
     }
 }

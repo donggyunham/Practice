@@ -6,16 +6,12 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString
 public class SourceDTO {
-    private Long id;
-    private Long sid;
+    private String id;
     private String name;
     private String description;
     private String url;
     private String category;
     private String language;
     private String country;
-    private String createdAt;
-    private String updatedAt;
 }
