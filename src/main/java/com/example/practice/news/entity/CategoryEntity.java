@@ -5,14 +5,12 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name="category")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class CategoryEntity {
@@ -45,5 +43,11 @@ public class CategoryEntity {
         categoryEntity.name = categoryDTO.getName();
         categoryEntity.memo = categoryDTO.getMemo();
         return categoryEntity;
+    }
+
+    public static CategoryEntity queryByName(String name){
+        CategoryEntity entity = new CategoryEntity();
+        entity.name = name;
+        return entity;
     }
 }

@@ -1,7 +1,7 @@
 package com.example.practice.news.service;
 
 import com.example.practice.news.dto.SourceDTO;
-import com.example.practice.news.dto.SourceResponse;
+import com.example.practice.news.dto.funcdto.SourceResponse;
 import com.example.practice.news.entity.SourceEntity;
 import com.example.practice.news.repository.SourceRepository;
 import com.google.gson.Gson;
@@ -16,8 +16,6 @@ import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -57,7 +55,7 @@ public class SourceService {
 
         // 상태 및 데이터 확인
         System.out.println("Response status: " + sourceResponse.getStatus());
-        System.out.println("값이 들어왔나?" + Arrays.toString(sourceResponse.getSources()));
+        /*System.out.println("값이 들어왔나?" + Arrays.toString(sourceResponse.getSources()));*/
         System.out.println("Source count: " + sourceResponse.getSources().length);
 
         try{

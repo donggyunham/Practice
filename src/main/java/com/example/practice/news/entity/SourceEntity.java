@@ -5,14 +5,12 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name="source")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class SourceEntity {
@@ -69,5 +67,11 @@ public class SourceEntity {
                 .language(sourceEntity.getLanguage())
                 .country(sourceEntity.getCountry())
                 .build();
+    }
+
+    public static SourceEntity queryByName(String name){
+        SourceEntity entity = new SourceEntity();
+        entity.name = name;
+        return entity;
     }
 }

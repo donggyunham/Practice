@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -25,7 +26,7 @@ public class SourceController {
         return "/menu/source";
     }
 
-    @GetMapping("/inputSource")
+    @PostMapping("/inputSource")
     public String inputSource(Model model){
         try{
             sourceService.inputSourceData();;

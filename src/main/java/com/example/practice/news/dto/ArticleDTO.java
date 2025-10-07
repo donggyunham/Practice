@@ -7,9 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class ArticleDTO {
-    private Long id;
-    private Long source;
-    private String category;
+    private SourceDTO source;
     private String author;
     private String title;
     private String description;

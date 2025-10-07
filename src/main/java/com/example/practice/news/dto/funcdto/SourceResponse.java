@@ -1,5 +1,6 @@
-package com.example.practice.news.dto;
+package com.example.practice.news.dto.funcdto;
 
+import com.example.practice.news.dto.SourceDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

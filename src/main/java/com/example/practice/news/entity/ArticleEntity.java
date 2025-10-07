@@ -5,14 +5,12 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name="article")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class ArticleEntity {
@@ -58,17 +56,23 @@ public class ArticleEntity {
     private LocalDateTime updatedAt;
 
 
-    public static ArticleDTO toArticleEntity(ArticleDTO articleDTO){
-        return ArticleDTO.builder()
-                .source(articleDTO.getSource())
-                .category(articleDTO.getCategory())
-                .author(articleDTO.getAuthor())
-                .title(articleDTO.getTitle())
-                .description(articleDTO.getDescription())
-                .url(articleDTO.getUrl())
-                .urlToImage(articleDTO.getUrlToImage())
-                .publishedAt(articleDTO.getPublishedAt())
-                .content(articleDTO.getContent())
-                .build();
+    public static ArticleEntity toArticleEntity(ArticleDTO articleDTO, SourceEntity sourceEntity, CategoryEntity categoryEntity){
+        ArticleEntity articleEntity = new ArticleEntity();
+        articleEntity.source = sourceEntity;
+        articleEntity.category = categoryEntity;
+        articleEntity.author = articleDTO.getAuthor();
+        articleEntity.title = articleDTO.getTitle();
+        articleEntity.description = articleDTO.getDescription();
+        articleEntity.url = articleDTO.getUrl();
+        articleEntity.urlToImage = articleDTO.getUrlToImage();
+        articleEntity.publishedAt = articleDTO.getPublishedAt();
+        articleEntity.content = articleDTO.getContent();
+
+        return articleEntity;
     }
+
+    public static ArticleDTO toArticleDTO() {
+        return null;
+    }
+
 }
