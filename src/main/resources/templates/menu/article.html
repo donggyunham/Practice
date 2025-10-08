@@ -73,24 +73,40 @@
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
         <script>
+            // chart.js 라이브러리 사용.
+            // HTML 문서의 모든 요소가 로드된 후 실행될 함수 등록
             document.addEventListener(
                 "DOMContentLoaded", () => {
+
+                // id가 categoryTable인 <table> 요소를 javascript 객체로 가져옴, 카테고리명, 개수 읽어옴.
                 const table = document.getElementById("categoryTable");
+
+                // 차트에 들어갈 데이터 배열 준비.
                 const labels = []; // category name
                 const data = []; // count data
+
                 // pie 차트를 그릴 데이터를 준비
+                // 테이블의 <tbody> 안에 있는 모든 <tr>(행)을 순회(loop).
+                // 한 행에 해당하는 카테고리 데이터 하나씩 처리.
                 table.querySelectorAll("tbody tr").forEach(row => {
+
+                    // 첫번째 열(카테고리명)
                     const category = row.cells[0].innerText.trim();
+                    // 두번째 열(개수) innerText로 글자 읽고, trim으로 공백제거, parseInt(,10) 문자열 숫자로 변환.
                     const count = parseInt(row.cells[1].innerText.trim(), 10);
+
+                    // 읽어온 데이터 labels와 data 배열에 추가.
                     labels.push(category);
                     data.push(count);
                 });
 
+                // <canvas id = "categoryChart"> 요소의 2d그래픽 컨텍스트? 를 가져옴. 하여튼 여기다 차트그릴거라는거임.
                 const ctx = document.getElementById("categoryChart").getContext("2d");
 
-                // datalabels plugin 등록
+                // datalabels plugin 등록 chart.js의 플러그인중 하나인 ChartDataLabels를 등록. 각 파이 조각에 라벨 표시.
                 Chart.register(ChartDataLabels);
 
+                // 새로운 chart.js 객체 생성
                 new Chart(ctx, {
                     type: 'pie',
                     data: {
